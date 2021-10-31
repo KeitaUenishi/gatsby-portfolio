@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import JSLogo from "../images/javascript.svg"
 import ReactLogo from "../images/react.svg"
 import GatsbyLogo from "../images/gatsby.svg"
@@ -11,6 +12,7 @@ import * as style from "../styles/index.module.scss"
 const Index = () => {
   return(
     <Layout>
+      <SEO title="uenishi" description="uenishi keitaのポートフォリオサイトです" />
       <div className={style.hero}>
         <StaticImage src="../images/index-hero.jpg" 
           alt="hero" 

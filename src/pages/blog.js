@@ -4,10 +4,12 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import * as style from "../styles/blog.module.scss"
+import SEO from "../components/seo"
 
 const Blog = (props) => {
   return(
     <Layout>
+      <SEO title="ブログ" description="これはブログページです"/>
     <div className={style.wrapper}>
       <div className={style.container}>
         <h1>Blog</h1>
@@ -18,7 +20,7 @@ const Blog = (props) => {
                 <h3>{singleBlog.node.frontmatter.title}</h3>
                 <p>{singleBlog.node.frontmatter.excerpt}</p>
                 <p>{singleBlog.node.frontmatter.date}</p>
-                <Link to={singleBlog.node.fields.slug}>Read More</Link>
+                <Link to={`/blog${singleBlog.node.fields.slug}`}>Read More</Link>
               </div>
               <GatsbyImage 
                 image={singleBlog.node.frontmatter.image.childImageSharp.gatsbyImageData} 

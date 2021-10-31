@@ -3,10 +3,14 @@ import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
 import * as style from "../styles/singleBlog.module.scss"
+import SEO from "../components/seo";
 
 const singleBlog = (props) => {
   return(
     <Layout>
+      <SEO 
+        title={props.data.markdownRemark.frontmatter.title}
+        description={props.data.markdownRemark.frontmatter.excerpt}/>
       <div className={style.hero}>
         <GatsbyImage 
           image={props.data.markdownRemark.frontmatter.image.childImageSharp.gatsbyImageData}

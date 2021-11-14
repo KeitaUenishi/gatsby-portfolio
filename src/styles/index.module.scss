@@ -33,7 +33,7 @@
 .profile {
     padding: 10rem 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    //grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
     grid-column-gap: 5rem;
@@ -61,7 +61,8 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-items: start;
-        align-items: center;
+        align-items: stretch;
+        flex-direction: column;
         grid-row-gap: 3rem;
         @media(max-width: $break-s){ grid-template-columns: 1fr }
         div {

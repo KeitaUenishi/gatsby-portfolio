@@ -11,11 +11,7 @@ const singleBlog = (props) => {
       <SEO 
         title={props.data.markdownRemark.frontmatter.title}
         description={props.data.markdownRemark.frontmatter.excerpt}/>
-      <div className={style.hero}>
-        <GatsbyImage 
-          image={props.data.markdownRemark.frontmatter.image.childImageSharp.gatsbyImageData}
-          alt="blog-image" />
-      </div>
+      <div className={style.hero}/>
       <div className={style.wrapper}>
         <div className={style.container}>
           <h1>{props.data.markdownRemark.frontmatter.title}</h1>
@@ -34,17 +30,7 @@ export const query = graphql`
     markdownRemark (fields: { slug:{ eq:$slug} }){
       frontmatter {
         date
-        excerpt
         id
-        image {
-          childImageSharp {
-            gatsbyImageData(
-              formats: AUTO, 
-              quality: 90, 
-              width: 1000, 
-              placeholder: BLURRED)
-          }
-        }
         title
       }
       html

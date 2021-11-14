@@ -6,11 +6,9 @@
         @extend %container;
         .blogCard {
             display: grid;
-            grid-template-columns: 1fr 2fr;
             align-items: center;
             color: inherit;
             margin-top: 5rem;
-            box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
             @media(max-width: $break-s) { 
                 grid-template-columns: 1fr;
             }
@@ -22,12 +20,8 @@
                 padding: 2rem 2rem;
             }
             a {
-                display: inline-block;
-                padding: 0.8rem 2rem;
-                background-color:  $primary-color;
-                color: #fff;
-                border-radius: 5px;
-                font-size: 1.4rem;
+                margin-top: 5px;
+                font-size: 3.0rem;
                 &:hover {
                     opacity: 0.8;
                 }

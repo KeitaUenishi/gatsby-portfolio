@@ -8,14 +8,7 @@ const Header = () => {
     <header className={style.headerWrapper}>
       <div className={style.container}>
         <div className={style.flexContainer}>
-          <Link to="/">
-            <StaticImage src="../images/logo.png" 
-              alt="logo" 
-              quality={90}
-              placeholder="blurred"
-              formats={["AUTO", "WEBP", "AVIF"]}
-              width={50} />
-          </Link>
+          <Link to="/">Top</Link>
             <ul>
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/contact">Contact</Link></li>

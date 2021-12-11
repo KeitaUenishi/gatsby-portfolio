@@ -10,7 +10,6 @@ const Header = () => {
         <div className={style.flexContainer}>
           <Link to="/">Top</Link>
             <ul>
-              <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
         </div>

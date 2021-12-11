@@ -15,7 +15,6 @@ const Footer = () => {
           <img src={twitter} alt="logo"/>
         </a>
         <hr/>
-        <Link to="/blog">Blog</Link>
         <Link to="/contact">Contact</Link>
         <p>©{new Date().getFullYear()} uenishi keita</p>
       </div>

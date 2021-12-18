@@ -13,7 +13,7 @@ const Title = () => {
             formats={["AUTO", "WEBP", "AVIF"]}
             className={style.heroImg}/>
       <div className={style.textContainer}>
-        <h3>大阪に生息するプログラマーの趣味ブログ</h3>
+        <h3>大阪に生息するいちプログラマーのブログ</h3>
       </div>  
     </div>
   )

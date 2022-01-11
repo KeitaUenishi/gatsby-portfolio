@@ -20,6 +20,13 @@ module.exports = {
               noInlineHighlight: false,
             },
           },
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
         ],
       },
     },

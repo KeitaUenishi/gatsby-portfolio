@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .wrapper {
-    padding: 7rem 0 10rem;
+    padding: 2rem 0 10rem;
     .container {    
         @extend %container;
         .blogCard {
@@ -17,13 +17,16 @@
         .textContainer {
             padding: 0 2rem 0.8rem;
             @media(max-width: $break-s){ 
-                padding: 2rem 2rem;
+                padding: 2rem 0.5rem;
             }
             a {
                 margin-top: 5px;
-                font-size: 3.0rem;
+                font-size: 2.4rem;
                 &:hover {
                     opacity: 0.8;
+                }
+                @media(max-width: $break-s){ 
+                    font-size: 2rem;
                 }
             }
         }

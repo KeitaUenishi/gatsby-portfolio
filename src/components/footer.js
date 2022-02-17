@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import github from "../images/github.svg"
-import twitter from "../images/twitter.svg"
+import github from "../images/icon-sns/github.svg"
+import twitter from "../images/icon-sns/twitter.svg"
 import * as style from "../styles/common.module.scss"
 
 const Footer = () => {

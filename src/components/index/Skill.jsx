@@ -1,9 +1,9 @@
 import React from 'react'
 import * as style from "../../styles/index.module.scss"
-import JSLogo from "../../images/javascript.svg"
-import ReactLogo from "../../images/react.svg"
-import CSharpLogo from "../../images/c--4.svg"
-import TSLogo from "../../images/typescript.svg"
+import JSLogo from "../../images/icon-tech/javascript.svg"
+import ReactLogo from "../../images/icon-tech/react.svg"
+import CSharpLogo from "../../images/icon-tech/c--4.svg"
+import TSLogo from "../../images/icon-tech/typescript.svg"
 
 const Skill = () => {
   return (

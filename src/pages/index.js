@@ -7,7 +7,7 @@ import * as style from "../styles/index.module.scss"
 import Title from "../components/index/Title"
 import Plofile from "../components/index/Plofile"
 import Skill from "../components/index/Skill"
-import Blog from "../components/index/Blog"
+import { Blog } from "../components/index/Blog"
 
 const Index = (props) => {
   return(
@@ -18,7 +18,7 @@ const Index = (props) => {
       </div>
       <div className={style.container}>
         <Plofile/>
-        <Blog props={props}/>
+        <Blog {...props}/>
         <div className={style.ctaButton}>
           <Link to="/contact">ご連絡はこちら</Link>
         </div>

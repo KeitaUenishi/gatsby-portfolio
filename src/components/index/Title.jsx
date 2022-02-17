@@ -6,7 +6,7 @@ import * as style from "../../styles/index.module.scss"
 const Title = () => {
   return (
     <div>
-      <StaticImage src="../../images/header.jpg" 
+      <StaticImage src="../../images/common/header.jpg" 
             alt="hero" 
             quality={90} 
             placeholder="blurred" 

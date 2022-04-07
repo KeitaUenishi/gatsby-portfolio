@@ -1,21 +1,55 @@
-import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
-import * as React from 'react'
-import * as style from "../styles/common.module.scss"
+import { Link } from "gatsby"
+import React from "react"
+import styled from "styled-components"
 
-const Header = () => {
+const HeaderWapper = styled.header`
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #fff;
+`
+
+const Container = styled.div`
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+`
+
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 70px;
+  & a {
+    color: inherit;
+    font-weight: 500;
+  }
+  & li {
+    display: inline-block;
+    margin: 0 0 0 6rem;
+    @media (max-width: $break-xs) {
+      margin: 0 0 0 4rem;
+    }
+  }
+`
+
+export const Header = () => {
   return (
-    <header className={style.headerWrapper}>
-      <div className={style.container}>
-        <div className={style.flexContainer}>
+    <HeaderWapper>
+      <Container>
+        <FlexContainer>
           <Link to="/">Top</Link>
-            <ul>
-              <li><Link to="/contact">Contact</Link></li>
-            </ul>
-        </div>
-      </div>
-    </header>
+          <ul>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </FlexContainer>
+      </Container>
+    </HeaderWapper>
   )
 }
-
-export default Header

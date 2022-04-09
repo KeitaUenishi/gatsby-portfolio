@@ -4,7 +4,9 @@ import github from "../images/icon-sns/github.svg"
 import twitter from "../images/icon-sns/twitter.svg"
 import styled from "styled-components"
 
-import { AppConst } from "../../utils/appConst"
+import cssVariables from "../css_variables.json"
+
+const variable = cssVariables.variables
 
 const FooterWrapper = styled.footer`
   display: flex;
@@ -22,7 +24,7 @@ const InsideContainer = styled.div`
     &:hover {
       opacity: 0.8;
     }
-    @media (max-width: ${AppConst.BREAK_S}) {
+    @media (max-width: ${variable.BREAK_S}) {
       margin: 0 1.5rem;
     }
   }

@@ -2,6 +2,10 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
+import cssVariables from "../css_variables.json"
+
+const variable = cssVariables.variables
+
 const HeaderWapper = styled.header`
   position: sticky;
   top: 0;
@@ -31,7 +35,7 @@ const FlexContainer = styled.div`
   & li {
     display: inline-block;
     margin: 0 0 0 6rem;
-    @media (max-width: $break-xs) {
+    @media (max-width: ${variable.BREAK_S}) {
       margin: 0 0 0 4rem;
     }
   }

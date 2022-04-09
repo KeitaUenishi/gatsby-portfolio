@@ -2,10 +2,9 @@ import * as React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
-import * as style from "../styles/contact.module.scss"
 import cssVariables from "../css_variables.json"
 
-const variables = cssVariables.variables;
+const { variables } = cssVariables
 
 const Wrapper = styled.div`
   padding: 7rem 0 10rem;
@@ -13,7 +12,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   ${variables.container}
-  .input[type=text], input[type=email], textarea {
+  input[type=text], input[type=email], textarea {
     width: 100%;
     font-family: inherit;
     font-size: inherit;
@@ -23,25 +22,25 @@ const Container = styled.div`
     border: solid 1px grey;
     border-radius: 5px;
   }
-  .label {
+  label {
     font-size: 1.4rem;
   }
-  .button {
+  button {
     width: 100%;
     border: none;
     color: white;
     padding: 0.5rem 2rem;
     font-size: 1.6rem;
     color: #fff;
-    background-color: $primary-color;
+    background-color: ${variables.PRIMARY_COLOR};
     transition-duration: 0.4s;
     border-radius: 5px;
-    &:hover {
+    :hover {
       opacity: 0.8;
       cursor: pointer;
     }
   }
-  *:focus {
+  :focus {
     outline: none;
   }
 `

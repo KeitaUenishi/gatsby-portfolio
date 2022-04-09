@@ -6,7 +6,7 @@ import styled from "styled-components"
 
 import cssVariables from "../css_variables.json"
 
-const variable = cssVariables.variables
+const { variables } = cssVariables
 
 const FooterWrapper = styled.footer`
   display: flex;
@@ -24,7 +24,7 @@ const InsideContainer = styled.div`
     &:hover {
       opacity: 0.8;
     }
-    @media (max-width: ${variable.BREAK_S}) {
+    @media (max-width: ${variables.BREAK_S}) {
       margin: 0 1.5rem;
     }
   }

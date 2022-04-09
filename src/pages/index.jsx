@@ -9,7 +9,7 @@ import { Blog } from "../components/index/Blog"
 import styled from "styled-components"
 import cssVariables from "../css_variables.json"
 
-const variables = cssVariables.variables
+const { variables } = cssVariables
 
 const Hero = styled.div`
   text-align: center;

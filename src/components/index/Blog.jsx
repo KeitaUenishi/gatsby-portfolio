@@ -1,22 +1,56 @@
-
 import * as React from "react"
-import { graphql, Link } from "gatsby"
-import * as style from "../../styles/blog.module.scss"
+import { Link } from "gatsby"
+import styled from "styled-components";
+import cssVariables from "../../css_variables.json"
+
+const { variables } = cssVariables
+
+const Wrapper = styled.div`
+  padding: 2rem 0 10rem;
+  .container {
+    ${variables.container}
+  }
+`
+const BlogCard = styled.div`
+  display: grid;
+  align-items: center;
+  color: inherit;
+  margin-top: 5rem;
+  @media(max-width: ${variables.BREAK_S}) {
+    grid-template-columns: 1fr;
+`
+
+const TextContainer = styled.div`
+  padding: 0 2rem 0.8rem;
+  @media(max-width: $break-s){
+    padding: 2rem 0.5rem;
+  }
+  a {
+    margin-top: 5px;
+    font-size: 2.4rem;
+    &:hover {
+      opacity: 0.8;
+    }
+    @media(max-width: $break-s){
+      font-size: 2rem;
+    }
+  }
+`
 
 export const Blog = (props) => {
   return(
-    <div className={style.wrapper}>
-      <div className={style.container}>
+    <Wrapper>
+      <div className="container">
       {props.data.allMarkdownRemark.edges.map((singleBlog, index) => (
-            <div className={style.blogCard} key={index}>
-              <div className={style.textContainer}>
+            <BlogCard key={index}>
+              <TextContainer>
                 <Link to={singleBlog.node.fields.slug}>{singleBlog.node.frontmatter.title}</Link>
                 <p>{singleBlog.node.frontmatter.date}</p>
-              </div>
-            </div>
+              </TextContainer>
+            </BlogCard>
           )
         )}
       </div>
-    </div>
+    </Wrapper>
   )
 }

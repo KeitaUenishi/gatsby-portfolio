@@ -28,7 +28,7 @@ const CtaButton = styled.div`
     display: inline-block;
     margin: 10rem 0;
     padding: 1.3rem 6rem;
-    background-color: $primary-color;
+    background-color: ${variables.PRIMARY_COLOR}
     border-radius: 25px;
     color: #fff;
     &:hover {

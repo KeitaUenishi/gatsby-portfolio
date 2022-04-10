@@ -1,24 +1,41 @@
-import * as React from "react";
-import { graphql } from "gatsby";
-import Layout from "../components/layout";
-import * as style from "../styles/singleBlog.module.scss"
-import SEO from "../components/seo";
+import * as React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import styled from "styled-components"
+import cssVariable from "../css_variables.json"
 
-const singleBlog = (props) => {
-  const {title, excerpt, date} = props.data.markdownRemark.frontmatter;
-  return(
+const { variables } = cssVariable
+
+const Hero = styled.div`
+  text-align: center;
+`
+
+const Wrapper = styled.div`
+  padding: 5rem 0 10rem;
+  & .container {
+    ${variables.container}
+  }
+  @media (max-width: ${variables.BREAK_S}) {
+    padding: 2rem 0 10rem;
+  }
+`
+
+const singleBlog = props => {
+  const { title, excerpt, date } = props.data.markdownRemark.frontmatter
+  return (
     <Layout>
-      <SEO 
-        title={title}
-        description={excerpt}/>
-      <div className={style.hero}/>
-      <div className={style.wrapper}>
-        <div className={style.container}>
+      <SEO title={title} description={excerpt} />
+      <Hero />
+      <Wrapper>
+        <div className="container">
           <h1>{title}</h1>
           <p>{date}</p>
-          <div dangerouslySetInnerHTML={{ __html:props.data.markdownRemark.html }}></div>
+          <div
+            dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
+          ></div>
         </div>
-      </div>
+      </Wrapper>
     </Layout>
   )
 }
@@ -26,8 +43,8 @@ const singleBlog = (props) => {
 export default singleBlog
 
 export const query = graphql`
-  query SingleBlogQuery ($slug: String!) {
-    markdownRemark (fields: { slug:{ eq:$slug} }){
+  query SingleBlogQuery($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         date
         id
@@ -35,4 +52,5 @@ export const query = graphql`
       }
       html
     }
-  }`
+  }
+`

@@ -41,7 +41,7 @@ const InsideContainer = styled.div`
   }
 `
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <FooterWrapper>
       <InsideContainer>

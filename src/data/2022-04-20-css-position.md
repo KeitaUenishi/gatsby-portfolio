@@ -33,7 +33,10 @@ positionを指定する際には、合わせて「top、left、right、bottom」
 それぞれ、全て使用する必要はなく、pxや%などで指定することができます。値を指定しない場合は**top: 0;** と **left: 0;** が自動的に適用されます。
 すでに設定した値をリセットする場合はautoを入力します。
 
+![position-property](../images/blog/2022-04/position-property.jpg)
+
 staticを指定した場合は、topやleftなどんプロパティを入力しても**位置を変更することはできません**。
+
 
 　
 

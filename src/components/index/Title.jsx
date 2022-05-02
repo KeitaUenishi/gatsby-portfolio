@@ -5,6 +5,8 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   .heroImg {
     min-height: 350px;
+    max-width: 960px;
+    margin: auto;
   }
 `
 
@@ -36,7 +38,7 @@ export const Title = () => {
             formats={["AUTO", "WEBP", "AVIF"]}
             className="heroImg"/>
       <TextContainer>
-        <h3>大阪に生息するいちプログラマーのブログ</h3>
+        <h3>大阪に生息するプログラマーのブログ</h3>
       </TextContainer>
     </Wrapper>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Profile } from './index/Plofile'
+import { Profile } from './index/Profile'
 
 export const SideBar = () => {
   return (

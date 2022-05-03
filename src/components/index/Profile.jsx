@@ -27,7 +27,7 @@ const ProfileWrapper = styled.div`
   }
 `
 
-export const Plofile = () => {
+export const Profile = () => {
   return (
     <ProfileWrapper>
       <div className='container'>

@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import { Title } from "../components/index/Title"
-import { Plofile } from "../components/index/Plofile"
+import { Profile } from "../components/index/Profile"
 import { Blog } from "../components/index/Blog"
 import styled from "styled-components"
 import cssVariables from "../css_variables.json"
@@ -48,7 +48,7 @@ const Index = props => {
         <Title />
       </Hero>
       <Container>
-        <Plofile />
+        <Profile />
         <Blog {...props} />
         <CtaButton>
           <Link to="/contact">ご連絡はこちら</Link>

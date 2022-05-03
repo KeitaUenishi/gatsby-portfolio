@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     defaultTitle: `Uenishi Portfolio Site`,
     defaultDescription: `エンジニアのポートフォリオサイトです`,
-    defaultImage: `https://uenishi.cloud/images/social-card.png`,
+    defaultImage: `src/images/social-card.png`,
     siteUrl: `https://uenishi.cloud`,
   },
   plugins: [

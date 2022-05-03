@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
+import { TwitterImage } from "../images/social-card.png"
+
 const SEO = ({ title, description }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
@@ -23,7 +25,7 @@ const SEO = ({ title, description }) => {
       <title>{title}</title>
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
-      <meta name="twitter:image" content={defaultImage} />
+      <meta name="twitter:image" content={TwitterImage} />
       <meta name="description" content={description} />
       <meta name="image" content={defaultImage} />
       <link rel="canonical" href={seo.canonical} />

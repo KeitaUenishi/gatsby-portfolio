@@ -42,7 +42,11 @@ C言語やC++言語などで表すと、「デリゲートとは関数ポイン�
 
 ここまで調べながら読んでいて、筆者自身は
 
-JavaScriptでいう、`const variable = function FuncA(){ ... return funcVariable }` みたいに関数そのものを代入して使うイメージ？
+JavaScriptでいう、
+```
+const variable = function FuncA(){ ... return funcVariable }
+```
+みたいに関数そのものを代入して使うイメージ？
 
 という印象を持った。
 

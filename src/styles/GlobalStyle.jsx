@@ -22,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
+    word-wrap:break-word;
   }
   blockquote {
     border-left: 5px solid #ddd;

@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components";
 import cssVariables from "../../css_variables.json"
+import { useEffect } from "react";
 
 const { variables } = cssVariables
 
@@ -15,14 +16,22 @@ const Wrapper = styled.div`
       ${variables.headTitle}
     }
   }
+  .active {
+    opacity: 1;
+    transition: 1s;
+    transform: translateY(0);
+  }
 `
 const BlogCard = styled.div`
   display: grid;
   align-items: center;
   color: inherit;
   margin-top: 5rem;
+  opacity: 0;
+  transform: translateY(-100px);
   @media(max-width: ${variables.BREAK_S}) {
     grid-template-columns: 1fr;
+  }
 `
 
 const TextContainer = styled(Link)`
@@ -52,12 +61,33 @@ const TextContainer = styled(Link)`
 `
 
 export const Blog = (props) => {
+  useEffect(() => {
+    const targets = document.querySelectorAll('.blog-card')
+
+    const options = {
+      threshold: 0
+    }
+    const observer = new IntersectionObserver(actionElements, options)
+    targets.forEach(target => {
+      observer.observe(target)
+    })
+
+    function actionElements(entries){
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active')
+        }
+      })
+    }
+  },[])
+
+
   return(
     <Wrapper>
       <div className="container">
       <h2>Blog</h2>
-      {props.data.allMarkdownRemark.edges.map((singleBlog, index) => (
-            <BlogCard key={index}>
+        {props.data.allMarkdownRemark.edges.map((singleBlog, index) => (
+            <BlogCard key={index} className='blog-card'>
               <TextContainer to={singleBlog.node.fields.slug}>
                 <p>{singleBlog.node.frontmatter.date}</p>
                 <div>{singleBlog.node.frontmatter.title}</div>

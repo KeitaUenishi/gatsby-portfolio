@@ -1,6 +1,6 @@
 import * as React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import styled from "styled-components"
 import cssVariables from "../css_variables.json"
 
@@ -48,7 +48,7 @@ const Container = styled.div`
 const Contact = () => {
   return(
     <Layout>
-      <SEO title="コンタクト" description="これはコンタクトページです"/>
+      <Seo title="コンタクト" description="これはコンタクトページです"/>
       <Wrapper>
         <Container>
           <h1>Contact</h1>

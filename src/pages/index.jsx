@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 import { Title } from "../components/index/Title"
 import { Profile } from "../components/index/Profile"
@@ -40,7 +40,7 @@ const CtaButton = styled.div`
 const Index = (props) => {
   return (
     <Layout>
-      <SEO
+      <Seo
         title="uenishi"
         description="uenishi keitaのポートフォリオサイトです"
       />

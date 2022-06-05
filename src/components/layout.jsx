@@ -1,7 +1,6 @@
 import React from "react"
 import { Header } from "./header"
 import { Footer } from "./footer"
-import { SideBar } from "./SideBar"
 
 import { GlobalStyle } from "../styles/GlobalStyle"
 

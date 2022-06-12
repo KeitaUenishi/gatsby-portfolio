@@ -5,7 +5,7 @@ import cssVariables from "../../css_variables.json"
 const { variables } = cssVariables
 
 const ProfileWrapper = styled.div`
-  padding: 10rem 0;
+  padding: 5rem 0;
   grid-column-gap: 5rem;
   grid-auto-flow: dense;
   .container {

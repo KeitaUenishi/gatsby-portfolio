@@ -2,6 +2,7 @@
 id: "7"
 title: "【Oracle】業務で使用するSQL【NVL関数】"
 date: "2022-04-14"
+tags: [sql, oracle]
 ---
 
 　

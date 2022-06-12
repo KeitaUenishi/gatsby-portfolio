@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const { variables } = cssVariables
 
 const Wrapper = styled.div`
-  padding: 2rem 0 10rem;
+  padding: 5rem 0 10rem;
   max-width: 960px;
   margin: auto;
   .container {
@@ -81,12 +81,11 @@ export const Blog = (props) => {
     }
   },[])
 
-
   return(
     <Wrapper>
       <div className="container">
       <h2>Blog</h2>
-        {props.data.allMarkdownRemark.edges.map((singleBlog, index) => (
+        {props.allMarkdownRemark.edges.map((singleBlog, index) => (
             <BlogCard key={index} className='blog-card'>
               <TextContainer to={singleBlog.node.fields.slug}>
                 <p>{singleBlog.node.frontmatter.date}</p>

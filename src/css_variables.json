@@ -1,14 +1,15 @@
 {
   "variables": {
     "PRIMARY_COLOR": "#368dff;",
+    "BREAK_TB": "860px",
     "BREAK_S": "540px;",
     "BREAK_XS": "400px;",
     "container": {  
         "max-width": "960px;",
         "margin-right": "auto;",
         "margin-left":  "auto;",
-        "padding-right": "30px;",
-        "padding-left":  "30px;"
+        "padding-right": "20px;",
+        "padding-left":  "20px;"
     },
     "headTitle": {
       "font-weight": "700;",

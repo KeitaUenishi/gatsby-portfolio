@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
@@ -21,8 +21,23 @@ const Wrapper = styled.div`
   }
 `
 
+const TagButton = styled.div`
+  a {
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    display: inline-block;
+    background-color: #ebebeb;
+    border-radius: 10px;
+    color: #696969;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+`
+
 const singleBlog = props => {
-  const { title, excerpt, date } = props.data.markdownRemark.frontmatter
+  const { title, excerpt, date, tags } = props.data.markdownRemark.frontmatter
   return (
     <Layout>
       <Seo title={title} description={excerpt} />
@@ -31,6 +46,17 @@ const singleBlog = props => {
         <div className="container">
           <h1>{title}</h1>
           <p>{date}</p>
+          <TagButton>
+            {tags &&
+              tags.length > 0 &&
+              tags.map((tag, idx) => {
+                return (
+                  <Link key={idx} to={`/tags/${tag}`} itemProp="url">
+                    {tag}
+                  </Link>
+                )
+              })}
+          </TagButton>
           <div
             dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
           ></div>
@@ -49,6 +75,7 @@ export const query = graphql`
         date
         id
         title
+        tags
       }
       html
     }

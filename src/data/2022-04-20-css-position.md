@@ -2,6 +2,7 @@
 id: "8"
 title: "【CSS】position:absoluteとrelative"
 date: "2022-04-20"
+tags: [css]
 ---
 
 # はじめに

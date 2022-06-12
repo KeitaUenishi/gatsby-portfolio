@@ -4,10 +4,10 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import { Title } from "../components/index/Title"
-import { Profile } from "../components/index/Profile"
 import { Blog } from "../components/index/Blog"
 import styled from "styled-components"
 import cssVariables from "../css_variables.json"
+import { SideBar } from "../components/SideBar"
 
 const { variables } = cssVariables
 
@@ -17,8 +17,27 @@ const Hero = styled.div`
   min-height: 350px;
 `
 
+const Wrapper = styled.div`
+  display: flex;
+  max-width: 1240px;
+  margin: auto;
+  @media (max-width: ${variables.BREAK_TB}) {
+    flex-direction: column;
+    align-items: center;
+  }
+`
+
 const Container = styled.div`
-  ${variables.container}
+  max-width: 960px;
+  margin-right: auto;
+  padding-right: 30px;
+`
+
+const SideBarContainer = styled.div`
+  max-width: 350px;
+  @media (max-width: ${variables.BREAK_TB}) {
+    max-width: 960px;
+  }
 `
 
 const CtaButton = styled.div`
@@ -37,7 +56,7 @@ const CtaButton = styled.div`
   }
 `
 
-const Index = (props) => {
+const Index = ({data}) => {
   return (
     <Layout>
       <Seo
@@ -47,13 +66,17 @@ const Index = (props) => {
       <Hero>
         <Title />
       </Hero>
-      <Container>
-        <Profile />
-        <Blog {...props} />
-        <CtaButton>
-          <Link to="/contact">ご連絡はこちら</Link>
-        </CtaButton>
-      </Container>
+      <Wrapper>
+        <Container>
+          <Blog {...data} />
+        </Container>
+        <SideBarContainer>
+          <SideBar/>
+        </SideBarContainer>
+      </Wrapper>
+      <CtaButton>
+        <Link to="/contact">ご連絡はこちら</Link>
+      </CtaButton>
     </Layout>
   )
 }
@@ -72,6 +95,7 @@ export const query = graphql`
             date
             id
             title
+            tags
           }
         }
       }

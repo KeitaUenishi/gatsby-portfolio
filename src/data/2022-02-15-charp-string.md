@@ -2,7 +2,7 @@
 id: "5"
 title: "C#での文字列の扱い方いろいろ"
 date: "2022-02-15"
-tags: [C#]
+tags: [Csharp]
 ---
 　
 # 概要

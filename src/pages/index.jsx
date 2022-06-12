@@ -71,7 +71,7 @@ const Index = ({data}) => {
           <Blog {...data} />
         </Container>
         <SideBarContainer>
-          <SideBar/>
+          <SideBar />
         </SideBarContainer>
       </Wrapper>
       <CtaButton>

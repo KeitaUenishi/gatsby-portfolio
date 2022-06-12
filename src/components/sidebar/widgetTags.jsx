@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import kebabCase from 'lodash/kebabCase';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import styled from 'styled-components';
 
@@ -44,7 +43,7 @@ const WidgetTags = () => {
       <ul>
         {group.map(tag => (
           <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+            <Link to={`/tags/${tag.fieldValue}/`}>
               #{tag.fieldValue} ({tag.totalCount})
             </Link>
           </li>

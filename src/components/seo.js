@@ -2,19 +2,20 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
-import { TwitterImage } from "../images/social-card.png"
+import { LinkImage } from "../images/common/header.jpg"
 
 const Seo = ({ title, description }) => {
   const { pathname } = useLocation()
-  const { site } = useStaticQuery(query)
+  const { site, siteImage } = useStaticQuery(query)
   const { defaultTitle, defaultDescription, defaultImage, siteUrl } =
     site.siteMetadata
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: defaultImage,
+    image: `${siteUrl}${siteImage.childImageSharp.fluid.src}`,
     url: `${siteUrl}${pathname}`,
     canonical: `${siteUrl}${pathname}`,
+    linkImage: `${siteUrl}${siteImage.childImageSharp.fluid.src}`,
   }
   return (
     <Helmet>
@@ -22,11 +23,11 @@ const Seo = ({ title, description }) => {
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta charSet="utf-8" />
       <title>{title}</title>
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
-      <meta name="twitter:image" content={TwitterImage} />
+      <meta name="twitter:image" content={seo.image} />
       <meta name="description" content={description} />
-      <meta name="image" content={defaultImage} />
+      <meta name="image" content={seo.image} />
       <link rel="canonical" href={seo.canonical} />
 
       {seo.title && <meta property="og:title" content={seo.title} />}
@@ -49,6 +50,13 @@ const query = graphql`
         defaultDescription
         defaultImage
         siteUrl
+      }
+    }
+    siteImage: file(relativePath: { eq: "common/header.jpg" }) {
+      childImageSharp {
+        fluid {
+          src
+        }
       }
     }
   }

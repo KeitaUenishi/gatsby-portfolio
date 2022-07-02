@@ -2,6 +2,7 @@
 id: "1"
 title: "JavaScript（ES6）の基本文法"
 date: "2021-12-15"
+tags: [JavaScript, プログラミング]
 ---
  
 # この記事について

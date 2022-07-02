@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   .heroImg {
     min-height: 350px;
-    max-width: 960px;
+    max-width: 1200px;
     margin: auto;
   }
 `

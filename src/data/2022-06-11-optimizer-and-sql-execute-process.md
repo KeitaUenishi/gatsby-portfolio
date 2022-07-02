@@ -2,6 +2,7 @@
 id: "11"
 title: "オプティマイザとSQL文の処理の流れ"
 date: "2022-06-11"
+tags: [database, oracle, sql]
 ---
 
 

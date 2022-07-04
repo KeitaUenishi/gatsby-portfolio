@@ -48,7 +48,6 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   result.data.tags.group.forEach(data => {
-    console.log(data)
     createPage({
       path: `/tags/${data.tag}`,
       component: tagTemplate,

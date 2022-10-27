@@ -1,8 +1,10 @@
-import * as React from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components";
+
 import cssVariables from "../../css_variables.json"
-import { useEffect } from "react";
+
+import { Pagination } from "../Pagination"
 
 const { variables } = cssVariables
 
@@ -61,7 +63,22 @@ const TextContainer = styled(Link)`
 `
 
 export const Blog = (props) => {
+
+  const pageItems = props.allMarkdownRemark.edges;
+  const [displayItems, setDisplayItems] = useState([])
+  const maxContents = 5;
+
+  
+  const handlePaginate = (page) => {
+    setDisplayItems(pageItems.slice((page - 1) * maxContents, page * maxContents));
+  }
+  
   useEffect(() => {
+    setDisplayItems(pageItems.slice(0, maxContents))
+  }, [])
+  
+  useEffect(() => {
+    // TODO: ページネーション用にアニメーションを初期化する
     const targets = document.querySelectorAll('.blog-card')
 
     const options = {
@@ -79,13 +96,15 @@ export const Blog = (props) => {
         }
       })
     }
-  },[])
+  },[displayItems])
+  console.log(displayItems)
 
   return(
     <Wrapper>
+      <Pagination sum={pageItems.length} per={5} onChange={e => handlePaginate(e.page)} />
       <div className="container">
       <h2>Blog</h2>
-        {props.allMarkdownRemark.edges.map((singleBlog, index) => (
+        {displayItems.map((singleBlog, index) => (
             <BlogCard key={index} className='blog-card'>
               <TextContainer to={singleBlog.node.fields.slug}>
                 <p>{singleBlog.node.frontmatter.date}</p>
@@ -95,6 +114,7 @@ export const Blog = (props) => {
           )
         )}
       </div>
+      <Pagination sum={pageItems.length} per={5} onChange={e => handlePaginate(e.page)} />
     </Wrapper>
   )
 }

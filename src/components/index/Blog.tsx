@@ -10,7 +10,7 @@ const { variables } = cssVariables
 
 const Wrapper = styled.div`
   padding: 5rem 0 10rem;
-  max-width: 960px;
+  width: 800px;
   margin: auto;
   .container {
     ${variables.container}
@@ -68,9 +68,19 @@ export const Blog = (props) => {
   const [displayItems, setDisplayItems] = useState([])
   const maxContents = 5;
 
-  
-  const handlePaginate = (page) => {
+  const handlePaginate = (page: number) => {
     setDisplayItems(pageItems.slice((page - 1) * maxContents, page * maxContents));
+
+    removeActive();
+  }
+  
+  const removeActive = () => {
+    const targets = document.querySelectorAll('.blog-card')
+    targets.forEach(entry => {
+      if (entry) {
+        entry.classList.remove('active')
+      }
+    })
   }
   
   useEffect(() => {
@@ -97,11 +107,9 @@ export const Blog = (props) => {
       })
     }
   },[displayItems])
-  console.log(displayItems)
 
   return(
     <Wrapper>
-      <Pagination sum={pageItems.length} per={5} onChange={e => handlePaginate(e.page)} />
       <div className="container">
       <h2>Blog</h2>
         {displayItems.map((singleBlog, index) => (

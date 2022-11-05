@@ -10,7 +10,6 @@ const { variables } = cssVariables
 
 const Wrapper = styled.div`
   padding: 5rem 0 10rem;
-  width: 800px;
   margin: auto;
   .container {
     ${variables.container}
@@ -25,6 +24,7 @@ const Wrapper = styled.div`
   }
 `
 const BlogCard = styled.div`
+  width: 100%;
   display: grid;
   align-items: center;
   color: inherit;
@@ -88,7 +88,6 @@ export const Blog = (props) => {
   }, [])
   
   useEffect(() => {
-    // TODO: ページネーション用にアニメーションを初期化する
     const targets = document.querySelectorAll('.blog-card')
 
     const options = {

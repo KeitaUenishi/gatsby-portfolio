@@ -1,12 +1,13 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
+import styled from "styled-components"
+
+import cssVariables from "../css_variables.json"
+
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
 import { Title } from "../components/index/Title"
 import { Blog } from "../components/index/Blog"
-import styled from "styled-components"
-import cssVariables from "../css_variables.json"
 import { SideBar } from "../components/SideBar"
 
 const { variables } = cssVariables
@@ -29,6 +30,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   max-width: 960px;
+  width: 100%;
   margin-right: auto;
   padding-right: 30px;
 `
@@ -60,8 +62,8 @@ const Index = ({data}) => {
   return (
     <Layout>
       <Seo
-        title="uenishi"
-        description="uenishi keitaのポートフォリオサイトです"
+        title="Uenishi"
+        description="Uenishi Keitaのポートフォリオサイトです"
       />
       <Hero>
         <Title />

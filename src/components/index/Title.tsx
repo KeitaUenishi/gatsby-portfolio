@@ -1,6 +1,6 @@
-import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const Wrapper = styled.div`
   .heroImg {
@@ -35,7 +35,7 @@ export const Title = () => {
             alt="hero" 
             quality={90} 
             placeholder="blurred" 
-            formats={["AUTO", "WEBP", "AVIF"]}
+            formats={["auto", "webp", "avif"]}
             className="heroImg"/>
       <TextContainer>
         <h3>大阪に生息するプログラマーのブログ</h3>

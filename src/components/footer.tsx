@@ -1,8 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
+
 import github from "../images/icon-sns/github.svg"
 import twitter from "../images/icon-sns/twitter.svg"
-import styled from "styled-components"
 
 import cssVariables from "../css_variables.json"
 

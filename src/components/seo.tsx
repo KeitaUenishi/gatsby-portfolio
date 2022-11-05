@@ -2,9 +2,13 @@ import * as React from "react"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
-import { LinkImage } from "../images/common/header.jpg"
 
-const Seo = ({ title, description }) => {
+type Props = {
+  title?: string
+  description?: string
+}
+
+export const Seo: React.FC<Props> = ({title, description }) => {
   const { pathname } = useLocation()
   const { site, siteImage } = useStaticQuery(query)
   const { defaultTitle, defaultDescription, defaultImage, siteUrl } =
@@ -39,8 +43,6 @@ const Seo = ({ title, description }) => {
     </Helmet>
   )
 }
-
-export default Seo
 
 const query = graphql`
   query Seo {

@@ -1,7 +1,9 @@
 import * as React from "react"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
 import styled from "styled-components"
+
+import Layout from "../components/layout"
+import { Seo } from "../components/seo"
+
 import cssVariables from "../css_variables.json"
 
 const { variables } = cssVariables
@@ -60,7 +62,7 @@ const Contact = () => {
             <label htmlFor="email">メールアドレス</label>
               <input type="email" name="email" id="email" required/>
             <label htmlFor="textarea">ご用件</label>
-              <textarea name="message" rows="10" id="textarea" required></textarea>
+              <textarea name="message" rows={10} id="textarea" required></textarea>
             <button type="submit">送信</button>
           </form>
         </Container>

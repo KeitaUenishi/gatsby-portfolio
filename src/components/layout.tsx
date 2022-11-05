@@ -4,12 +4,16 @@ import { Footer } from "./footer"
 
 import { GlobalStyle } from "../styles/GlobalStyle"
 
-const Layout = props => {
+type Props = {
+  children: React.ReactNode
+}
+
+const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <GlobalStyle />
       <Header />
-      <main>{props.children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   )

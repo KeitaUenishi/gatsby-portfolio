@@ -1,8 +1,10 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
 import styled from "styled-components"
+
+import Layout from "../components/layout"
+import { Seo } from "../components/seo"
+
 import cssVariable from "../css_variables.json"
 
 const { variables } = cssVariable

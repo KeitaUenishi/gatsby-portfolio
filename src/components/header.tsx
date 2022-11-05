@@ -6,7 +6,7 @@ import cssVariables from "../css_variables.json"
 
 const { variables } = cssVariables
 
-const HeaderWapper = styled.header`
+const HeaderWrapper = styled.header`
   position: sticky;
   top: 0;
   width: 100%;
@@ -43,7 +43,7 @@ const FlexContainer = styled.div`
 
 export const Header = () => {
   return (
-    <HeaderWapper>
+    <HeaderWrapper>
       <Container>
         <FlexContainer>
           <Link to="/">Top</Link>
@@ -54,6 +54,6 @@ export const Header = () => {
           </ul>
         </FlexContainer>
       </Container>
-    </HeaderWapper>
+    </HeaderWrapper>
   )
 }

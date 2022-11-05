@@ -62,7 +62,7 @@ const TextContainer = styled(Link)`
   }
 `
 
-export const Blog = (props) => {
+export const Blog = (props: any) => {
 
   const pageItems = props.allMarkdownRemark.edges;
   const [displayItems, setDisplayItems] = useState([])
@@ -98,7 +98,7 @@ export const Blog = (props) => {
       observer.observe(target)
     })
 
-    function actionElements(entries){
+    function actionElements(entries: IntersectionObserverEntry[]){
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active')
@@ -111,7 +111,7 @@ export const Blog = (props) => {
     <Wrapper>
       <div className="container">
       <h2>Blog</h2>
-        {displayItems.map((singleBlog, index) => (
+        {displayItems.map((singleBlog: any, index) => (
             <BlogCard key={index} className='blog-card'>
               <TextContainer to={singleBlog.node.fields.slug}>
                 <p>{singleBlog.node.frontmatter.date}</p>

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, PageProps } from "gatsby"
 import styled from "styled-components"
 
 import cssVariables from "../css_variables.json"
@@ -58,11 +58,11 @@ const CtaButton = styled.div`
   }
 `
 
-type Query = {
-  data: any
+type Props = {
+  data: PageProps<GatsbyTypes.BlogQuery>
 }
 
-const Index: React.FC<Query> = ({data}) => {
+const Index: React.FC<Props> = ({ data }) => {
   return (
     <Layout>
       <Seo
@@ -90,7 +90,7 @@ const Index: React.FC<Query> = ({data}) => {
 export default Index
 
 export const query = graphql`
-  query BlogQuery {
+  query Blog {
     allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {

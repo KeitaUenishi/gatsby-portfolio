@@ -15,7 +15,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const tagTemplate = path.resolve(`./src/templates/tags.js`)
+  const tagTemplate = path.resolve(`./src/templates/tags.tsx`)
 
   const result = await graphql(`
     query {
@@ -40,7 +40,7 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.slugs.edges.forEach(({ node }) => {
     createPage({
       path: `${node.fields.slug}`,
-      component: path.resolve(`./src/templates/single-blog.js`),
+      component: path.resolve(`./src/templates/single-blog.tsx`),
       context: {
         slug: node.fields.slug,
       },

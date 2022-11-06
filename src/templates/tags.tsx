@@ -13,7 +13,12 @@ const Wrapper = styled.div`
   }
 `
 
-const tags = ({ data, pageContext }) => {
+type Props = {
+  data: any,
+  pageContext: { tag: string},
+}
+
+const tags: React.FC<Props> = ({ data, pageContext }) => {
   const { totalCount } = data.allMarkdownRemark
   const posts = data.allMarkdownRemark.nodes
   const { tag } = pageContext

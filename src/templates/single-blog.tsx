@@ -38,7 +38,7 @@ const TagButton = styled.div`
   }
 `
 
-const singleBlog = props => {
+const singleBlog = (props: any) => {
   const { title, excerpt, date, tags } = props.data.markdownRemark.frontmatter
   return (
     <Layout>
@@ -71,7 +71,7 @@ const singleBlog = props => {
 export default singleBlog
 
 export const query = graphql`
-  query SingleBlogQuery($slug: String!) {
+  query SingleBlog($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         date

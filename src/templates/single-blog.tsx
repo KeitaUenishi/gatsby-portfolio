@@ -2,8 +2,8 @@ import * as React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 
-import Layout from "../components/layout"
-import { Seo } from "../components/seo"
+import Layout from "../components/Layout"
+import { Seo } from "../components/Seo"
 
 import cssVariable from "../css_variables.json"
 

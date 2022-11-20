@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react"
+import { useRecoilState } from "recoil";
+import { pageState } from "../../globalStates/atoms/page";
 import { Link } from "gatsby"
 import styled from "styled-components";
 
@@ -63,13 +65,18 @@ const TextContainer = styled(Link)`
 `
 
 export const Blog = (props: any) => {
-
   const pageItems = props.allMarkdownRemark.edges;
   const [displayItems, setDisplayItems] = useState([])
+  const [currentPage, setCurrentPage] = useRecoilState(pageState)
   const maxContents = 5;
 
+  const displayBlogItems = (pageNumber: number) => {
+    setDisplayItems(pageItems.slice((pageNumber - 1) * maxContents, pageNumber * maxContents));
+  }
+
   const handlePaginate = (page: number) => {
-    setDisplayItems(pageItems.slice((page - 1) * maxContents, page * maxContents));
+    setCurrentPage(page)
+    displayBlogItems(page);
 
     removeActive();
   }
@@ -84,7 +91,7 @@ export const Blog = (props: any) => {
   }
   
   useEffect(() => {
-    setDisplayItems(pageItems.slice(0, maxContents))
+    displayBlogItems(currentPage);
   }, [])
   
   useEffect(() => {

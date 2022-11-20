@@ -81,8 +81,6 @@ export const Pagination: React.FC<Props> = ({ sum, per, onChange }) => {
     setCurrentPage(page);
   }
 
-  console.log(currentPage);
-
   return (
     <>
       <Container>

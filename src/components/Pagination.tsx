@@ -1,7 +1,10 @@
 // 参考 https://www.akashixi-tech.com/react/pagination
 
 import React, { useEffect } from "react";
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
+
+import { pageState } from "../globalStates/atoms/page";
 
 const Container = styled.nav`
   margin: 12px auto;
@@ -50,7 +53,8 @@ type Props = {
 
 export const Pagination: React.FC<Props> = ({ sum, per, onChange }) => {
   const isFirstRender = React.useRef(true);
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const selectPage = useRecoilValue(pageState);
+  const [currentPage, setCurrentPage] = React.useState(selectPage);
 
   useEffect(() => {
     if(isFirstRender.current) {

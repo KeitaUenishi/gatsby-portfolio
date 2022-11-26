@@ -4,8 +4,8 @@ import styled from "styled-components"
 
 import cssVariables from "../css_variables.json"
 
-import Layout from "../components/layout"
-import { Seo } from "../components/seo"
+import Layout from "../components/Layout"
+import { Seo } from "../components/Seo"
 import { Title } from "../components/index/Title"
 import { Blog } from "../components/index/Blog"
 import { SideBar } from "../components/SideBar"

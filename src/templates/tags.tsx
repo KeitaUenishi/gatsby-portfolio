@@ -2,9 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import { Blog } from "../components/index/Blog"
-import { Seo } from "../components/seo"
+import { Seo } from "../components/Seo"
 
 const Wrapper = styled.div`
   margin: 5rem auto 5rem;

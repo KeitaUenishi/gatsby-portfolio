@@ -72,6 +72,11 @@ const AppIndex = styled.div`
   margin-top: 15px;
 `
 
+const CardStyle = styled.div`
+  height: 140px;
+  padding-bottom: 0;
+`
+
 type Props = {
   data: PageProps<GatsbyTypes.BlogQuery>
 }
@@ -99,7 +104,11 @@ const Index: React.FC<Props> = ({ data }) => {
           個人開発アプリ
         </AppIndexTitle>
         <AppIndex>
-          <a href="https://jolly-ramanujan-636c00.netlify.app/">モンスター占い</a>
+          <div className="iframely-embed">
+            <CardStyle className="iframely-responsive">
+              <a href="https://jolly-ramanujan-636c00.netlify.app/" data-iframely-url="//iframely.net/L3Ui6VW"></a>
+            </CardStyle>
+          </div>
         </AppIndex>
       </AppIndexWrapper>
       <CtaButton>

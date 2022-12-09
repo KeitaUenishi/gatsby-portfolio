@@ -40,6 +40,7 @@ export const Seo: React.FC<Props> = ({title, description }) => {
       )}
       {seo.url && <meta property="og:url" content={seo.url} />}
       {seo.image && <meta property="og:image" content={seo.image} />}
+      <script async src="//cdn.iframe.ly/embed.js"></script>
     </Helmet>
   )
 }

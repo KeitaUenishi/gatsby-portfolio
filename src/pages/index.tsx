@@ -9,6 +9,7 @@ import { Seo } from "../components/Seo"
 import { Title } from "../components/index/Title"
 import { Blog } from "../components/index/Blog"
 import { SideBar } from "../components/SideBar"
+import Applications from "../components/index/Applications"
 
 const { variables } = cssVariables
 
@@ -58,24 +59,7 @@ const CtaButton = styled.div`
   }
 `
 
-const AppIndexWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
 
-const AppIndexTitle = styled.h2`
-  font-size: 2.5rem;
-`
-
-const AppIndex = styled.div`
-  margin-top: 15px;
-`
-
-const CardStyle = styled.div`
-  height: 140px;
-  padding-bottom: 0;
-`
 
 type Props = {
   data: PageProps<GatsbyTypes.BlogQuery>
@@ -99,18 +83,7 @@ const Index: React.FC<Props> = ({ data }) => {
           <SideBar />
         </SideBarContainer>
       </Wrapper>
-      <AppIndexWrapper>
-        <AppIndexTitle>
-          個人開発アプリ
-        </AppIndexTitle>
-        <AppIndex>
-          <div className="iframely-embed">
-            <CardStyle className="iframely-responsive">
-              <a href="https://jolly-ramanujan-636c00.netlify.app/" data-iframely-url="//iframely.net/L3Ui6VW"></a>
-            </CardStyle>
-          </div>
-        </AppIndex>
-      </AppIndexWrapper>
+      <Applications />
       <CtaButton>
         <Link to="/contact">ご連絡はこちら</Link>
       </CtaButton>

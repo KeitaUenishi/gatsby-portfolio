@@ -11,6 +11,7 @@ const AppIndexWrapper = styled.div`
 
 const AppIndexTitle = styled.h2`
   font-size: 2.5rem;
+  margin-bottom: 24px;
 `
 
 const AppIndex = styled.div`

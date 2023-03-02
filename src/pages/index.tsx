@@ -59,7 +59,13 @@ const CtaButton = styled.div`
   }
 `
 
-
+const TransferLinkContainer = styled.div`
+  text-align: center;
+  margin: 24px 0;
+  & a {
+    font-size: 2rem;
+  }
+`
 
 type Props = {
   data: PageProps<GatsbyTypes.BlogQuery>
@@ -75,6 +81,9 @@ const Index: React.FC<Props> = ({ data }) => {
       <Hero>
         <Title />
       </Hero>
+      <TransferLinkContainer>
+        <a href="https://www.uenishi.blog/">移転しました</a>
+      </TransferLinkContainer>
       <Wrapper>
         <Container>
           <Blog {...data} />
